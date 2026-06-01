@@ -1,26 +1,133 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-brand: #C8F135;
+  --color-brand-dim: rgba(200, 241, 53, 0.12);
+  --color-dark: #0A0A0A;
+  --color-surface: #141414;
+  --color-muted: #1E1E1E;
+  --color-muted-text: #A0A0A0;
+  --color-white: #F5F5F0;
+  --color-border: rgba(255, 255, 255, 0.06);
+  --color-border-hover: rgba(255, 255, 255, 0.12);
+  --color-amber: #F59E0B;
+  --color-blue: #3B82F6;
+  --color-purple: #8B5CF6;
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", ui-serif, Georgia, serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-dark);
+  color: var(--color-white);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Selection */
+::selection {
+  background-color: rgba(200, 241, 53, 0.3);
+  color: #F5F5F0;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(200, 241, 53, 0.3);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(200, 241, 53, 0.5);
+}
+
+/* Hero Grid Pattern */
+.hero-grid {
+  background-image:
+    linear-gradient(rgba(200, 241, 53, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(200, 241, 53, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* Dot pattern */
+.dot-pattern {
+  background-image: radial-gradient(rgba(200, 241, 53, 0.08) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+/* Glow effects */
+.glow-brand {
+  box-shadow: 0 0 20px rgba(200, 241, 53, 0.12);
+}
+
+.glow-brand-strong {
+  box-shadow: 0 0 30px rgba(200, 241, 53, 0.2);
+}
+
+.text-glow {
+  text-shadow: 0 0 20px rgba(200, 241, 53, 0.3);
+}
+
+/* Card hover glow */
+.card-glow:hover {
+  border-color: rgba(200, 241, 53, 0.3);
+  box-shadow: 0 0 30px rgba(200, 241, 53, 0.08), 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+/* Timeline line */
+.timeline-line {
+  background: linear-gradient(to bottom, rgba(200, 241, 53, 0.6), rgba(200, 241, 53, 0.05));
+}
+
+/* Bounce animation for scroll indicator */
+@keyframes bounce-slow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 2s ease-in-out infinite;
+}
+
+/* Navbar backdrop */
+.nav-blur {
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  
+  .animate-bounce-slow {
+    animation: none;
+  }
+}
+
+/* Mobile menu overlay */
+.mobile-menu-overlay {
+  background: rgba(10, 10, 10, 0.95);
+  backdrop-filter: blur(20px);
 }
