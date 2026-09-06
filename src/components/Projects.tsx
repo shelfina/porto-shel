@@ -17,7 +17,8 @@ const categoryColorMap: Record<string, string> = {
   "UI/UX": "bg-blue/10 text-blue border-blue/20",
   "Business Plan": "bg-amber/10 text-amber border-amber/20",
   Essay: "bg-purple/10 text-purple border-purple/20",
-  "Case Study": "bg-brand/10 text-brand border-brand/20",
+  "Software Dev": "bg-muted text-white border-border/50",
+  "Raion Project": "bg-purple/20 text-purple border-purple/30",
 };
 
 export default function Projects() {
@@ -50,7 +51,7 @@ export default function Projects() {
           className="mb-12"
         >
           <span className="text-brand text-sm font-medium tracking-[0.2em] uppercase">
-            03 — Projects
+            05 — Projects
           </span>
           <h2 className="text-3xl md:text-4xl font-bold mt-3 text-white">
             Selected Projects
@@ -65,10 +66,10 @@ export default function Projects() {
           viewport={{ once: true, amount: 0.2 }}
           className="flex flex-wrap gap-2 mb-10"
         >
-          {categories.map((cat) => (
+          {["All", "BMC", "UI/UX", "Business Plan", "Essay"].map((cat) => (
             <button
               key={cat}
-              onClick={() => setActiveCategory(cat)}
+              onClick={() => setActiveCategory(cat as ProjectCategory)}
               className={`px-4 py-2 text-sm font-medium rounded-lg transition-all duration-300 ${
                 activeCategory === cat
                   ? "bg-brand text-dark"

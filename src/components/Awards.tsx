@@ -40,10 +40,10 @@ export default function Awards() {
           className="mb-16"
         >
           <span className="text-brand text-sm font-medium tracking-[0.2em] uppercase">
-            04 — Awards
+            06 — Honors and Awards
           </span>
           <h2 className="text-3xl md:text-4xl font-bold mt-3 text-white">
-            Honors & Awards
+            Honors and Awards
           </h2>
         </motion.div>
 
@@ -78,26 +78,20 @@ export default function Awards() {
                       transition: { duration: 0.4 },
                     },
                   }}
-                  className="flex items-center gap-4 bg-surface border border-border rounded-xl p-4 hover:border-brand/20 transition-all duration-300"
+                  className="bg-surface border border-border rounded-xl p-4 hover:border-brand/20 transition-all duration-300"
                 >
-                  <div className="shrink-0">
-                    <Trophy size={16} className="text-brand/60" />
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <p className="text-white text-sm font-medium truncate">
+                  <div className="flex flex-col items-start gap-2">
+                    <Trophy size={20} className="text-brand" />
+                    <h3 className="text-white font-medium text-base">
                       {award.title}
-                    </p>
-                    <p className="text-muted-text text-xs truncate">
+                    </h3>
+                    <p className="text-muted-text text-sm">
                       {award.event}
                     </p>
+                    <p className="text-brand font-semibold text-sm">
+                      {award.result}
+                    </p>
                   </div>
-                  <span
-                    className={`shrink-0 px-2.5 py-1 text-[10px] font-semibold rounded-lg ${
-                      resultColorMap[award.resultColor]
-                    }`}
-                  >
-                    {award.result}
-                  </span>
                 </motion.div>
               ))}
             </div>
@@ -115,21 +109,31 @@ export default function Awards() {
               Organizational Awards
             </h3>
 
-            {orgAwards.map((award) => (
-              <div
-                key={award.id}
-                className="bg-surface border-2 border-brand/30 rounded-xl p-6 glow-brand transition-all duration-300 hover:border-brand/50"
-              >
-                <div className="flex items-center gap-3 mb-3">
-                  <Star size={24} className="text-brand" fill="currentColor" />
-                  <h4 className="text-brand font-bold text-lg">
-                    {award.result}
-                  </h4>
-                </div>
-                <p className="text-white font-medium">{award.title}</p>
-                <p className="text-muted-text text-sm mt-1">{award.event}</p>
-              </div>
-            ))}
+            <div className="space-y-3">
+              {orgAwards.map((award) => (
+                <motion.div
+                  key={award.id}
+                  variants={{
+                    hidden: { opacity: 0, y: -20 },
+                    visible: { opacity: 1, y: 0, transition: { duration: 0.4 } },
+                  }}
+                  className="bg-surface border border-border rounded-xl p-4 hover:border-brand/20 transition-all duration-300"
+                >
+                  <div className="flex flex-col items-start gap-2">
+                    <Star size={20} className="text-brand" />
+                    <h3 className="text-white font-medium text-base">
+                      {award.title}
+                    </h3>
+                    <p className="text-muted-text text-sm">
+                      {award.event}
+                    </p>
+                    <p className="text-brand font-semibold text-sm">
+                      {award.result}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
 
             {/* Stats Bar */}
             <div className="grid grid-cols-3 gap-4 mt-8">

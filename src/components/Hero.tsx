@@ -2,6 +2,7 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
+import SplitText from "@/components/SplitText";
 
 const heroWords = ["Shelfina", "Khayla", "Anindita"];
 
@@ -90,15 +91,21 @@ export default function Hero() {
         </motion.div>
 
         {/* Tagline */}
-        <motion.p
-          variants={fadeUp}
-          initial="hidden"
-          animate="visible"
-          transition={{ delay: 0.8 }}
-          className="font-serif italic text-brand text-lg md:text-xl lg:text-2xl mb-10"
-        >
-          Product Analyst · Project Manager · Business Strategist
-        </motion.p>
+        <div className="font-serif italic text-brand text-lg md:text-xl lg:text-2xl mb-10 min-h-[1.5em] flex justify-center items-center">
+          <SplitText
+            text="Product Analyst · Project Manager · Business Strategist"
+            className="font-serif italic text-brand text-lg md:text-xl lg:text-2xl"
+            delay={30}
+            duration={0.8}
+            ease="power3.out"
+            splitType="chars"
+            from={{ opacity: 0, y: 20 }}
+            to={{ opacity: 1, y: 0 }}
+            threshold={0.1}
+            rootMargin="-100px"
+            textAlign="center"
+          />
+        </div>
 
         {/* CTA Buttons */}
         <motion.div

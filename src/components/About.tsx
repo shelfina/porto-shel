@@ -1,19 +1,25 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
+import { projects } from "@/data/projects";
+import { awards } from "@/data/awards";
 
-const skills = [
+const technicalSkills = [
   "Java", "PHP", "JavaScript", "HTML/CSS", "SQL",
-  "Figma", "Notion", "Jira", "Trello",
-  "Design Thinking", "User Research", "Product Roadmap Planning",
-  "RICE", "MoSCoW", "BPMN", "SCAMPER",
+  "GitHub", "VS Code", "Enterprise Architect", "DBeaver", "Bizagi"
+];
+
+const productSkills = [
+  "Figma", "Design Thinking", "User Centered Design", "User Research", 
+  "Product Roadmap Planning", "Feature Prioritization", 
+  "Software Development Lifecycle (SDLC)", "Notion", "Trello", "Jira", "Google Workspace"
 ];
 
 const stats = [
-  { value: "3.92", label: "GPA" },
-  { value: "13+", label: "Competitions" },
+  { value: "3.93", label: "GPA" },
+  { value: `${projects.length}`, label: "Competitions & Projects" },
   { value: "20+", label: "Committees" },
-  { value: "6", label: "Awards" },
+  { value: `${awards.length}`, label: "Awards" },
 ];
 
 export default function About() {
@@ -56,28 +62,46 @@ export default function About() {
             viewport={{ once: true, amount: 0.2 }}
           >
             <p className="text-muted-text leading-relaxed text-base md:text-lg mb-8">
-              I am a 2024 Information Technology Education student at{" "}
+              Information Technology Education undergraduate at{" "}
               <span className="text-white font-medium">Brawijaya University</span>{" "}
-              with a strong interest in Product Management, Project Management,
-              and Business Strategy. I have participated in{" "}
-              <span className="text-brand font-medium">20+ organizational committees</span>{" "}
-              with a focus on product analysis, strategy, and cross-functional
-              collaboration.
+              with a strong focus on Product Management, Project Management, System Analysis, 
+              and Business Strategy. Proven track record in leading product initiatives, 
+              driving cross-functional collaboration, and winning national and international 
+              business competitions. Experienced in translating market and user insights into 
+              product strategies, user flows, financial models, and go-to-market roadmaps.
             </p>
 
-            <div className="mb-4">
-              <h3 className="text-sm font-medium text-muted-text tracking-wide uppercase mb-4">
-                Skills & Tools
-              </h3>
-              <div className="flex flex-wrap gap-2">
-                {skills.map((skill) => (
-                  <span
-                    key={skill}
-                    className="px-3 py-1.5 text-xs font-medium bg-muted text-muted-text rounded-full border border-border hover:border-brand/30 hover:text-white transition-all duration-300"
-                  >
-                    {skill}
-                  </span>
-                ))}
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-sm font-medium text-white tracking-wide uppercase mb-3">
+                  Technical & Development
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  {technicalSkills.map((skill) => (
+                    <span
+                      key={skill}
+                      className="px-3 py-1.5 text-xs font-medium bg-muted text-muted-text rounded-full border border-border hover:border-brand/30 hover:text-white transition-all duration-300"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              
+              <div>
+                <h3 className="text-sm font-medium text-white tracking-wide uppercase mb-3">
+                  Product & UI/UX
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  {productSkills.map((skill) => (
+                    <span
+                      key={skill}
+                      className="px-3 py-1.5 text-xs font-medium bg-muted text-muted-text rounded-full border border-border hover:border-brand/30 hover:text-white transition-all duration-300"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
           </motion.div>
