@@ -2,8 +2,9 @@ export type ProjectCategory =
   | "All"
   | "UI/UX"
   | "Software"
-  | "BMC & Pitching"
+  | "BMC"
   | "Business Plan"
+  | "Essay"
   | "Community";
 
 export interface ProjectItem {
@@ -20,8 +21,9 @@ export const projectCategories: ProjectCategory[] = [
   "All",
   "UI/UX",
   "Software",
-  "BMC & Pitching",
+  "BMC",
   "Business Plan",
+  "Essay",
   "Community",
 ];
 
@@ -35,16 +37,6 @@ export const projectsData: ProjectItem[] = [
     category: "UI/UX",
     description:
       "Safety-first navigation app for women riders with safety-aware route recommendations (lighting & area activity), hands-free voice navigation via AI companion NARA, smart audio monitoring, and SOS emergency features.",
-  },
-  {
-    id: "tenangin",
-    name: "TenangIn",
-    event: "Future Founders League",
-    year: "2026",
-    result: "Top 10-20 Finalist",
-    category: "UI/UX",
-    description:
-      "Academic and professional stress platform with an AI pre-diagnostic co-pilot, early warning system for self-harm risk, and hybrid chat (AI, peers, psychologists).",
   },
   {
     id: "rebite",
@@ -86,14 +78,24 @@ export const projectsData: ProjectItem[] = [
       "Counseling and emergency support mobile app for FILKOM UB with panic button, counseling channel integration, scheduling, real-time status tracking, and university account login.",
   },
 
-  // BMC & Pitching
+  // BMC
+  {
+    id: "tenangin",
+    name: "TenangIn",
+    event: "Future Founders League",
+    year: "2026",
+    result: "Top 10-20 Finalist",
+    category: "BMC",
+    description:
+      "Academic and professional stress platform with an AI pre-diagnostic co-pilot, early warning system for self-harm risk, and hybrid chat (AI, peers, psychologists).",
+  },
   {
     id: "cash-flow-radar",
     name: "Cash Flow Radar",
     event: "Accounting Fest UNP Kediri",
     year: "2026",
     result: "1st Place (National)",
-    category: "BMC & Pitching",
+    category: "BMC",
     description:
       "Real-time MSME finance dashboard with automated cash flow monitoring, early deficit warnings, forecasting, and bankable financial reports.",
   },
@@ -103,7 +105,7 @@ export const projectsData: ProjectItem[] = [
     event: "Canvas Indonesia",
     year: "2026",
     result: "3rd Runner-Up + Best Pitch Deck",
-    category: "BMC & Pitching",
+    category: "BMC",
     description:
       "Circular economy ecosystem for recycling used cooking oil from households and culinary businesses into biodiesel.",
   },
@@ -113,7 +115,7 @@ export const projectsData: ProjectItem[] = [
     event: "UBMCC",
     year: "2026",
     result: "Top 5 Finalist",
-    category: "BMC & Pitching",
+    category: "BMC",
     description:
       "AI-based companion platform for people with disabilities with multi-stage support worker verification, real-time family dashboard, AI recommendations, and matchmaking.",
   },
@@ -123,12 +125,12 @@ export const projectsData: ProjectItem[] = [
     event: "I-WEEK",
     year: "2026",
     result: "Finalist",
-    category: "BMC & Pitching",
+    category: "BMC",
     description:
       "Digital marketplace for Indonesian teachers to sell teaching materials, aligned with SDGs.",
   },
 
-  // Business Plan & Essay
+  // Business Plan
   {
     id: "medilink",
     name: "Medilink",
@@ -150,14 +152,14 @@ export const projectsData: ProjectItem[] = [
       "Job platform integrated with training and certification for informal workers (job listings, courses, skill assessment, digital certification, employer recruitment dashboard).",
   },
   {
-    id: "amora-essay",
-    name: "Amora Essay",
-    event: "Idea Festival IPB x Sentosa Foundation",
+    id: "amora-bp",
+    name: "Amora",
+    event: "Greennovation UMSIDA",
     year: "2026",
-    result: "Overall Champion + Best Paper + Gold Medal + 2nd Place",
+    result: "3rd Place",
     category: "Business Plan",
     description:
-      "Academic essay on sustainable business practices in Indonesia's beauty industry via eco-friendly sourcing and packaging.",
+      "Sustainable beauty business plan focused on eco-friendly packaging and local Indonesian ingredients.",
   },
   {
     id: "ngajikidz",
@@ -170,16 +172,6 @@ export const projectsData: ProjectItem[] = [
       "Sharia-based online Qur'an learning platform for children with market sizing, financial projections, and verified teacher structure.",
   },
   {
-    id: "amora-bp",
-    name: "Amora",
-    event: "Greennovation UMSIDA",
-    year: "2026",
-    result: "3rd Place",
-    category: "Business Plan",
-    description:
-      "Sustainable beauty business plan focused on eco-friendly packaging and local Indonesian ingredients.",
-  },
-  {
     id: "pondasi",
     name: "PONDASI",
     event: "NBPC Blitar",
@@ -188,6 +180,18 @@ export const projectsData: ProjectItem[] = [
     category: "Business Plan",
     description:
       "High-privacy support platform for teens and young couples on family crisis, violence, and marriage readiness with emergency alerts and AI crisis detection.",
+  },
+
+  // Essay
+  {
+    id: "amora-essay",
+    name: "Amora Essay",
+    event: "Idea Festival IPB x Sentosa Foundation",
+    year: "2026",
+    result: "Overall Champion + Best Paper + Gold Medal + 2nd Place",
+    category: "Essay",
+    description:
+      "Academic essay on sustainable business practices in Indonesia's beauty industry via eco-friendly sourcing and packaging.",
   },
 
   // Publication & Community

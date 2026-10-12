@@ -241,18 +241,51 @@
 .orgImageWrapper {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 10;
-  background: var(--bg-surface);
+  aspect-ratio: 16 / 11;
+  background: rgba(11, 16, 32, 0.5);
+  border-bottom: 1px solid var(--border-glass);
+  padding: 1rem;
   overflow: hidden;
 }
 
+[data-theme="light"] .orgImageWrapper {
+  background: rgba(235, 240, 255, 0.6);
+}
+
 .orgImage {
-  object-fit: cover;
+  object-fit: contain !important;
+  padding: 0.5rem;
   transition: transform var(--transition-smooth);
 }
 
 .orgCard:hover .orgImage {
-  transform: scale(1.04);
+  transform: scale(1.02);
+}
+
+.orgZoomBadge {
+  position: absolute;
+  bottom: 0.75rem;
+  right: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  background: rgba(11, 16, 32, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--border-glass);
+  padding: 0.3rem 0.65rem;
+  border-radius: var(--radius-full);
+  opacity: 0;
+  transform: translateY(4px);
+  transition: all var(--transition-fast);
+  z-index: 2;
+}
+
+.orgCard:hover .orgZoomBadge {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .orgInfo {

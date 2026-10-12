@@ -138,7 +138,13 @@ export default function Awards() {
                 transition={{ duration: 0.45, delay: index * 0.1 }}
                 className={styles.orgCard}
               >
-                <div className={styles.orgImageWrapper}>
+                <a
+                  href={award.imageUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.orgImageWrapper}
+                  title="Click to view full certificate"
+                >
                   <Image
                     src={award.imageUrl}
                     alt={award.alt}
@@ -153,7 +159,11 @@ export default function Awards() {
                       }
                     }}
                   />
-                </div>
+                  <span className={styles.orgZoomBadge}>
+                    <ExternalLink size={13} />
+                    <span>View Certificate</span>
+                  </span>
+                </a>
                 <div className={styles.orgInfo}>
                   <h4 className={styles.orgTitle}>{award.title}</h4>
                   <div className={styles.orgMeta}>

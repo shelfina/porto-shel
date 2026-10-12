@@ -17,6 +17,7 @@ export const organizationalExperience: ExperienceItem[] = [
     category: "organizational",
     description:
       "Translates user insights into structured initiatives to scale 180DC's visibility and impact. Product Lead for Mentoring Services; co-authored 26 of 79 pages of the 180DC Playbook / Casebook 1.0 (analytical frameworks, deck storylines, winner deck analysis, judges' POV, mentor sourcing, winning competition strategies).",
+    badge: "Best Function Analyst",
   },
   {
     id: "raion-pm",
