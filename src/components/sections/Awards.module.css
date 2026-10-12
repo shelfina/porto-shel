@@ -241,20 +241,19 @@
 .orgImageWrapper {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 11;
-  background: rgba(11, 16, 32, 0.5);
+  height: 220px;
+  background: rgba(11, 16, 32, 0.85);
   border-bottom: 1px solid var(--border-glass);
-  padding: 1rem;
   overflow: hidden;
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
 }
 
 [data-theme="light"] .orgImageWrapper {
-  background: rgba(235, 240, 255, 0.6);
+  background: rgba(220, 228, 255, 0.8);
 }
 
 .orgImage {
-  object-fit: contain !important;
-  padding: 0.5rem;
+  object-fit: cover !important;
   transition: transform var(--transition-smooth);
 }
 

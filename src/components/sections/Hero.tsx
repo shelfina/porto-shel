@@ -12,11 +12,13 @@ export default function Hero() {
 
   return (
     <section className={styles.heroSection} aria-label="Introduction">
-      {/* Background Gradient Orbs */}
+      {/* Background Gradient Orbs + Mesh */}
       <div className={styles.orbContainer} aria-hidden="true">
         <div className={styles.orbBlue} />
         <div className={styles.orbPurple} />
+        <div className={styles.orbAccent} />
       </div>
+      <div className={styles.meshOverlay} aria-hidden="true" />
 
       <div className={`container ${styles.container}`}>
         {/* Left Column: Text & CTAs */}
@@ -32,11 +34,13 @@ export default function Hero() {
           </div>
 
           <h1 className={styles.nameHeading}>
-            <span className="gradient-text">Shelfina</span>{" "}
-            Khayla Anindita
+            <span className="gradient-text">Product Enthusiast</span>
           </h1>
 
-          <p className={styles.descriptor}>{profileData.descriptor}</p>
+          <p className={styles.descriptor}>
+            Information Technology Education<br />
+            Brawijaya University
+          </p>
 
           <div className={styles.roleChips} aria-label="Roles">
             {profileData.roles.map((role) => (

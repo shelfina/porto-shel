@@ -28,7 +28,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://shelfina-porto.vercel.app"),
   title: {
-    default: "Shelfina Khayla Anindita — Product Manager & Product Analyst",
+    default: "Shelfina Khayla Anindita — Product Analyst & PM",
     template: "%s | Shelfina Khayla Anindita",
   },
   description:
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://shelfina-porto.vercel.app",
-    title: "Shelfina Khayla Anindita — Product Manager & Product Analyst",
+    title: "Shelfina Khayla Anindita — Product Analyst & PM",
     description:
       "Product Manager, Product Analyst, System Analyst, and Business Strategy. Information Technology Education undergraduate at Brawijaya University.",
     siteName: "Shelfina Khayla Anindita Portfolio",
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Shelfina Khayla Anindita — Product Manager & Product Analyst",
+    title: "Shelfina Khayla Anindita — Product Analyst & PM",
     description:
       "Product Manager, Product Analyst, System Analyst, and Business Strategy. Information Technology Education undergraduate at Brawijaya University.",
     images: ["https://i.imgur.com/6ZEKifj.jpg"],
