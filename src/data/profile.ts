@@ -2,6 +2,7 @@ export interface ProfileData {
   name: string;
   nickname: string;
   tagline: string;
+  roles: string[];
   descriptor: string;
   aboutText: string;
   highlightChips: string[];
@@ -29,6 +30,12 @@ export const profileData: ProfileData = {
   name: "Shelfina Khayla Anindita",
   nickname: "Shel",
   tagline: "Product Manager, Product Analyst, System Analyst, and Business Strategy",
+  roles: [
+    "Product Manager",
+    "Product Analyst",
+    "System Analyst",
+    "Business Strategy",
+  ],
   descriptor: "Information Technology Education undergraduate, Brawijaya University",
   aboutText:
     "Information Technology Education undergraduate at Brawijaya University with a strong focus on Product Management, Project Management, System Analysis, and Business Strategy. Proven track record in leading product initiatives, driving cross-functional collaboration, and winning national and international business competitions. Experienced in translating market and user insights into product strategies, user flows, financial models, and go-to-market roadmaps.",

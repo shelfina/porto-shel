@@ -31,14 +31,18 @@ export default function Hero() {
             <span>Available for Opportunities</span>
           </div>
 
-          <h2 className={styles.nameHeading}>Hello, I&apos;m {profileData.name}</h2>
-
-          <h1 className={styles.tagline}>
-            <span className="gradient-text">Product Manager,</span> Product Analyst,
-            System Analyst, and Business Strategy
+          <h1 className={styles.nameHeading}>
+            <span className="gradient-text">Shelfina</span>{" "}
+            Khayla Anindita
           </h1>
 
           <p className={styles.descriptor}>{profileData.descriptor}</p>
+
+          <div className={styles.roleChips} aria-label="Roles">
+            {profileData.roles.map((role) => (
+              <span key={role} className={styles.roleChip}>{role}</span>
+            ))}
+          </div>
 
           <div className={styles.ctaRow}>
             {/* Primary CTA: WhatsApp */}

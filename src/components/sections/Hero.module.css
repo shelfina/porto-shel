@@ -102,40 +102,63 @@
 }
 
 .nameHeading {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: var(--text-secondary);
-  margin-bottom: 0.5rem;
-  letter-spacing: -0.01em;
-}
-
-.tagline {
-  font-size: 2.25rem;
+  font-size: 2.5rem;
   font-weight: 800;
-  line-height: 1.15;
+  line-height: 1.1;
   color: var(--text-primary);
-  margin-bottom: 1.25rem;
+  margin-bottom: 1rem;
   letter-spacing: -0.03em;
 }
 
 @media (min-width: 640px) {
-  .tagline {
-    font-size: 3rem;
+  .nameHeading {
+    font-size: 3.25rem;
   }
 }
 
 @media (min-width: 1200px) {
-  .tagline {
-    font-size: 3.5rem;
+  .nameHeading {
+    font-size: 4rem;
   }
 }
 
 .descriptor {
-  font-size: 1.125rem;
+  font-size: 1.0625rem;
   line-height: 1.6;
   color: var(--text-secondary);
-  margin-bottom: 2rem;
+  margin-bottom: 1.25rem;
   max-width: 580px;
+}
+
+/* Role Chips */
+.roleChips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.roleChip {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--blue-400);
+  background: var(--bg-tag);
+  border: 1px solid var(--border-glass);
+  padding: 0.35rem 0.875rem;
+  border-radius: var(--radius-full);
+  transition: border-color var(--transition-fast), background var(--transition-fast), color var(--transition-fast);
+}
+
+.roleChip:hover {
+  border-color: var(--border-glass-hover);
+  background: var(--bg-card);
+  color: var(--text-primary);
+}
+
+[data-theme="light"] .roleChip {
+  color: var(--blue-600);
 }
 
 /* CTA buttons */
