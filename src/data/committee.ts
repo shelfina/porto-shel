@@ -1,72 +1,99 @@
 export interface CommitteeItem {
-  id: number;
-  title: string;
+  id: string;
+  role: string;
+  event: string;
   organization: string;
-  period?: string;
+  year: string;
+  category: "external" | "university";
   description: string;
 }
 
-export const externalCommittees: CommitteeItem[] = [
+export const committeeExperiences: CommitteeItem[] = [
+  // External & National
   {
-    id: 1,
-    title: "Product Lead – Mentoring Services",
-    organization: "180 Degrees Consulting UB",
-    period: "2026",
-    description: "Led product strategy, created web user flows, drafted TOR/MoUs, and managed mentor recruitment and marketing briefs.",
+    id: "comm-180dc-lead",
+    role: "Product Lead",
+    event: "Mentoring Services",
+    organization: "180DC UB",
+    year: "2026",
+    category: "external",
+    description: "Product strategy, web user flows, TOR/MoUs, mentor recruitment, marketing briefs.",
   },
   {
-    id: 2,
-    title: "Event Staff – Consulting Bootcamp",
-    organization: "180 Degrees Consulting UB",
-    period: "2026",
-    description: "Drafted event concepts, technical guidelines, cue cards, interactive games, and media asset requirements.",
+    id: "comm-180dc-bootcamp",
+    role: "Event Staff",
+    event: "Consulting Bootcamp",
+    organization: "180DC UB",
+    year: "2026",
+    category: "external",
+    description: "Event concepts, technical guidelines, cue cards, interactive games, media asset requirements.",
   },
   {
-    id: 3,
-    title: "Treasurer – Indonesian International Week",
+    id: "comm-180dc-jadp",
+    role: "Assessment Staff",
+    event: "Junior Analyst Development Program",
+    organization: "180DC UB",
+    year: "2026",
+    category: "external",
+    description: "Group allocation, assessment forms, assignments, scoring, report cards.",
+  },
+  {
+    id: "comm-isais-treasurer",
+    role: "Treasurer",
+    event: "Indonesian International Week",
     organization: "Indonesian Student Association for International Studies",
-    period: "2026",
-    description: "Managed budgeting (RAB), operational cost forecasting, and cash flow tracking via Google Sheets.",
+    year: "2026",
+    category: "external",
+    description: "Budgeting (RAB), cost forecasting, cash flow tracking in Google Sheets.",
   },
   {
-    id: 4,
-    title: "Marketing and Communication Officer – ProConnect",
+    id: "comm-studentxceos",
+    role: "Marketing and Communication Officer",
+    event: "ProConnect",
     organization: "StudentxCEOs East Java",
-    period: "2026",
-    description: "Executed marketing strategies and promotional outreach for networking events.",
+    year: "2026",
+    category: "external",
+    description: "Marketing strategy and promotional outreach.",
+  },
+
+  // University (Brawijaya University)
+  {
+    id: "comm-mawapres",
+    role: "Vice Head of Event",
+    event: "MAWAPRES FILKOM UB",
+    organization: "Brawijaya University",
+    year: "2026",
+    category: "university",
+    description: "End-to-end event execution, timelines, cross-functional coordination.",
+  },
+  {
+    id: "comm-artropolis",
+    role: "Sponsorship & Fundraising Staff",
+    event: "Artropolis",
+    organization: "Brawijaya University",
+    year: "2025",
+    category: "university",
+    description: "Secured funding and in-kind partnerships.",
+  },
+  {
+    id: "comm-raja-brawijaya",
+    role: "Field Coordinator Staff",
+    event: "RAJA BRAWIJAYA",
+    organization: "Brawijaya University",
+    year: "2025",
+    category: "university",
+    description: "Crowd management and field operations for thousands of new students.",
+  },
+  {
+    id: "comm-comparative-study",
+    role: "Field Coordinator Staff",
+    event: "Comparative Study",
+    organization: "BEM FILKOM x BEM FISIP UB",
+    year: "2025",
+    category: "university",
+    description: "Field coordination, technical readiness, logistics.",
   },
 ];
 
-export const universityCommittees: CommitteeItem[] = [
-  {
-    id: 1,
-    title: "Vice Head of Event – MAWAPRES",
-    organization: "FILKOM UB",
-    period: "2026",
-    description: "Managed end-to-end event execution, timelines, and cross-functional team coordination using Google Workspace.",
-  },
-  {
-    id: 2,
-    title: "Sponsorship & Fundraising Staff – Artropolis",
-    organization: "Brawijaya University",
-    period: "2025",
-    description: "Secured funding and in-kind partnerships through targeted sponsor outreach and stakeholder engagement.",
-  },
-  {
-    id: 3,
-    title: "Field Coordinator Staff – RAJA BRAWIJAYA",
-    organization: "Brawijaya University",
-    period: "2025",
-    description: "Coordinated crowd management, participant flow, and field operations for thousands of new students.",
-  },
-  {
-    id: 4,
-    title: "Field Coordinator Staff – Comparative Study",
-    organization: "BEM FILKOM and BEM FISIP UB",
-    period: "2025",
-    description: "Managed field coordination, technical readiness, and real-time logistics for inter-faculty organizational visits.",
-  },
-];
-
-export const committeeSummary = "Active Leadership across 20+ Organizational & Event Committees (2022–2024)";
-export const committeeBadge = "Master of Ceremony for the Technical Meeting and English Speech Competition – MAWAPRES FILKOM 2026";
+export const committeeClosingNote =
+  "Active leadership across 20+ organizational & event committees (2022–2024)";

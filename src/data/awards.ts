@@ -1,163 +1,211 @@
-export interface Award {
-  id: number;
+export interface AwardItem {
+  id: string;
   title: string;
-  event: string;
-  result: string;
-  type: "competition" | "organization";
-  resultColor: "brand" | "amber" | "blue" | "purple";
+  subtitle?: string;
+  certificateUrl: string;
+  badge?: string;
 }
 
-export const awards: Award[] = [
-  // Competition Wins (16)
+export interface CompetitionGroup {
+  id: string;
+  competitionName: string;
+  organizer: string;
+  date: string;
+  awards: AwardItem[];
+}
+
+export interface OrganizationalAward {
+  id: string;
+  title: string;
+  organization: string;
+  date: string;
+  imageUrl: string;
+  fallbackImage: string;
+  alt: string;
+}
+
+export const awardsSummaryBadge = "16 Awards · 2 Organizational Awards";
+
+export const competitionGroups: CompetitionGroup[] = [
   {
-    id: 1,
-    title: "1st Runner Up International Business Plan Competition",
-    event: "Setara Prisma Nusantara (Nusantara Muda) in Collaboration with Majlis Perwakilan Pelajar Universiti Utara Malaysia (MPP UUM) · Aug 2026",
-    result: "1st Runner Up",
-    type: "competition",
-    resultColor: "amber"
+    id: "uum-2026",
+    competitionName: "International Business Plan Competition",
+    organizer: "Setara Prisma Nusantara x MPP Universiti Utara Malaysia (UUM)",
+    date: "Aug 2026",
+    awards: [
+      {
+        id: "uum-1",
+        title: "Grand Champion",
+        subtitle: "International Business Plan Competition",
+        certificateUrl: "https://drive.google.com/file/d/1dpoldXjJnIs-wGdD4DW2-m9Dc8qZ2J-j/view?usp=drive_link",
+        badge: "Grand Champion",
+      },
+      {
+        id: "uum-2",
+        title: "Gold Medal (Health Sub-theme)",
+        subtitle: "Medilink",
+        certificateUrl: "https://drive.google.com/file/d/1YbVLt6Sh06kRNCyUCAFO8qCJVvGaNPQU/view?usp=drive_link",
+        badge: "Gold Medal",
+      },
+      {
+        id: "uum-3",
+        title: "Gold Medal (Service Sub-theme)",
+        subtitle: "Kerjain",
+        certificateUrl: "https://drive.google.com/file/d/12ky1kf5DVHqTlwr-fpYCTg8MaQjV7dQ8/view?usp=drive_link",
+        badge: "Gold Medal",
+      },
+      {
+        id: "uum-4",
+        title: "1st Runner-Up",
+        subtitle: "Kerjain",
+        certificateUrl: "https://drive.google.com/file/d/1xhZdcbNzQx0w_rXy46c6oXaf9sOXRuJN/view?usp=sharing",
+        badge: "1st Runner-Up",
+      },
+      {
+        id: "uum-5",
+        title: "3rd Place Winner",
+        subtitle: "Medilink",
+        certificateUrl: "https://drive.google.com/file/d/1lyKi_iNcol5Qm5qFncq-c588KI5TkNIN/view?usp=drive_link",
+        badge: "3rd Place",
+      },
+      {
+        id: "uum-6",
+        title: "Favorite Poster (Health Sub-theme)",
+        subtitle: "Medilink",
+        certificateUrl: "https://drive.google.com/file/d/1AMVQbGwjP_CIQscGMgi9oiMeR4Ve_1QX/view?usp=drive_link",
+        badge: "Favorite Poster",
+      },
+      {
+        id: "uum-7",
+        title: "Favorite Poster (Service Sub-theme)",
+        subtitle: "Kerjain",
+        certificateUrl: "https://drive.google.com/file/d/1fFyWZdK2aouEsmz9TxLbfYYy0ByIFby5/view?usp=drive_link",
+        badge: "Favorite Poster",
+      },
+    ],
   },
   {
-    id: 2,
-    title: "3rd Place Winner International Business Plan Competition",
-    event: "Setara Prisma Nusantara (Nusantara Muda) in Collaboration with Majlis Perwakilan Pelajar Universiti Utara Malaysia (MPP UUM) · Aug 2026",
-    result: "3rd Place Winner",
-    type: "competition",
-    resultColor: "blue"
+    id: "ipb-2026",
+    competitionName: "Idea Festival (IDF) 5 — Essay Competition",
+    organizer: "IPB University x Sentosa Foundation",
+    date: "Jun 2026",
+    awards: [
+      {
+        id: "ipb-1",
+        title: "Overall Champion",
+        subtitle: "Essay Competition",
+        certificateUrl: "https://drive.google.com/file/d/1Nwl62APUzIVSDzE0w4JDxMV6P0e-gJfR/view?usp=drive_link",
+        badge: "Overall Champion",
+      },
+      {
+        id: "ipb-2",
+        title: "Best Paper",
+        subtitle: "Amora Essay",
+        certificateUrl: "https://drive.google.com/file/d/1My5z1RfBynZKbtuWSuk2m2FTy72iECj-/view?usp=drive_link",
+        badge: "Best Paper",
+      },
+      {
+        id: "ipb-3",
+        title: "Gold Medal",
+        subtitle: "Amora Essay",
+        certificateUrl: "https://drive.google.com/file/d/1F5XV-B4K2YPbmSKOauZiHRTT6UhG4lDu/view?usp=drive_link",
+        badge: "Gold Medal",
+      },
+      {
+        id: "ipb-4",
+        title: "2nd Place Winner",
+        subtitle: "Amora Essay",
+        certificateUrl: "https://drive.google.com/file/d/1hWbG4nYM4rzrLU5z4oSxi49jTDdlI0v3/view?usp=drive_link",
+        badge: "2nd Place",
+      },
+    ],
   },
   {
-    id: 3,
-    title: "Favorite Poster International Business Plan Competition",
-    event: "Setara Prisma Nusantara (Nusantara Muda) in Collaboration with Majlis Perwakilan Pelajar Universiti Utara Malaysia (MPP UUM) · Aug 2026",
-    result: "Favorite Poster in the Health Sub-theme",
-    type: "competition",
-    resultColor: "purple"
+    id: "canvas-2026",
+    competitionName: "BMC Competition",
+    organizer: "Canvas Indonesia",
+    date: "Mar 2026",
+    awards: [
+      {
+        id: "canvas-1",
+        title: "3rd Runner-Up",
+        subtitle: "Jelantiku (BMC Competition)",
+        certificateUrl: "https://drive.google.com/file/d/1Xua50Lk4A8zz2isIMVtrizQ7uC4GtoXx/view?usp=drive_link",
+        badge: "3rd Runner-Up",
+      },
+      {
+        id: "canvas-2",
+        title: "Best Pitch Deck",
+        subtitle: "Jelantiku (BMC Competition)",
+        certificateUrl: "https://drive.google.com/file/d/1AY96rIXgqmQ2-kHvIvypMR2RrTU4ordh/view?usp=drive_link",
+        badge: "Best Pitch Deck",
+      },
+    ],
   },
   {
-    id: 4,
-    title: "Favorite Poster International Business Plan Competition",
-    event: "Setara Prisma Nusantara (Nusantara Muda) in Collaboration with Majlis Perwakilan Pelajar Universiti Utara Malaysia (MPP UUM) · Aug 2026",
-    result: "Favorite Poster in the Service Sub-theme",
-    type: "competition",
-    resultColor: "purple"
+    id: "uin-2026",
+    competitionName: "Dies Maulidiyah IX Business Plan Competition",
+    organizer: "KSEI FPM FEBI UIN Madura",
+    date: "Jul 2026",
+    awards: [
+      {
+        id: "uin-1",
+        title: "1st Place Winner",
+        subtitle: "NgajiKidz (Business Plan Competition)",
+        certificateUrl: "https://drive.google.com/file/d/1omB5vQhFJVObQ7tTvQRKXVaP0b39B0UZ/view?usp=drive_link",
+        badge: "1st Place",
+      },
+    ],
   },
   {
-    id: 5,
-    title: "Gold Medal International Business Plan Competition",
-    event: "Setara Prisma Nusantara (Nusantara Muda) in Collaboration with Majlis Perwakilan Pelajar Universiti Utara Malaysia (MPP UUM) · Aug 2026",
-    result: "Gold Medal in the Service Sub-theme",
-    type: "competition",
-    resultColor: "brand"
+    id: "unp-2026",
+    competitionName: "Accounting Fest — BMC Competition",
+    organizer: "Nusantara PGRI University Kediri",
+    date: "Jan 2026",
+    awards: [
+      {
+        id: "unp-1",
+        title: "1st Place Winner",
+        subtitle: "Cash Flow Radar (Accounting Fest, BMC Competition)",
+        certificateUrl: "https://drive.google.com/file/d/1LORFbmn6papJOZAeeeynsbtkMFwEtong/view?usp=drive_link",
+        badge: "1st Place (National)",
+      },
+    ],
   },
   {
-    id: 6,
-    title: "Gold Medal International Business Plan Competition",
-    event: "Setara Prisma Nusantara (Nusantara Muda) in Collaboration with Majlis Perwakilan Pelajar Universiti Utara Malaysia (MPP UUM) · Aug 2026",
-    result: "Gold Medal in the Health Sub-theme",
-    type: "competition",
-    resultColor: "brand"
+    id: "umsida-2026",
+    competitionName: "Greennovation — Business Plan Competition",
+    organizer: "Muhammadiyah University of Sidoarjo (UMSIDA)",
+    date: "Jan 2026",
+    awards: [
+      {
+        id: "umsida-1",
+        title: "3rd Place Winner",
+        subtitle: "Amora (Greennovation, Business Plan Competition)",
+        certificateUrl: "https://drive.google.com/file/d/1gXUTiGC_rORAwGF4PaS0CAWpkTSrODZM/view?usp=drive_link",
+        badge: "3rd Place",
+      },
+    ],
   },
-  {
-    id: 7,
-    title: "Grand Champion International Business Plan Competition",
-    event: "Setara Prisma Nusantara (Nusantara Muda) in Collaboration with Majlis Perwakilan Pelajar Universiti Utara Malaysia (MPP UUM) · Aug 2026",
-    result: "Grand Champion",
-    type: "competition",
-    resultColor: "brand"
-  },
-  {
-    id: 8,
-    title: "1st Place Winner Business Plan Competition",
-    event: "Dies Maulidiyah IX KSEI FPM FEBI UIN MADURA · Jul 2026",
-    result: "1st Place Winner",
-    type: "competition",
-    resultColor: "brand"
-  },
-  {
-    id: 9,
-    title: "2nd Place Winner Essay Competition",
-    event: "Idea Festival (IDF) 5, organized by Bogor Science Club (BSC) IPB University and Sentosa Foundation · Jun 2026",
-    result: "2nd Place Winner",
-    type: "competition",
-    resultColor: "amber"
-  },
-  {
-    id: 10,
-    title: "Best Paper Essay Competition",
-    event: "Idea Festival (IDF) 5, organized by Bogor Science Club (BSC) IPB University and Sentosa Foundation · Jun 2026",
-    result: "Best Paper",
-    type: "competition",
-    resultColor: "purple"
-  },
-  {
-    id: 11,
-    title: "Gold Medal Essay Competition",
-    event: "Idea Festival (IDF) 5, organized by Bogor Science Club (BSC) IPB University and Sentosa Foundation · Jun 2026",
-    result: "Gold Medal",
-    type: "competition",
-    resultColor: "brand"
-  },
-  {
-    id: 12,
-    title: "Overall Champion Essay Competition",
-    event: "Idea Festival (IDF) 5, organized by Bogor Science Club (BSC) IPB University and Sentosa Foundation · Jun 2026",
-    result: "Overall Champion",
-    type: "competition",
-    resultColor: "brand"
-  },
-  {
-    id: 13,
-    title: "3rd Runner Up BMC Competition",
-    event: "Canvas Indonesia · Mar 2026",
-    result: "3rd Runner Up",
-    type: "competition",
-    resultColor: "blue"
-  },
-  {
-    id: 14,
-    title: "Best Pitch Deck BMC Competition",
-    event: "Canvas Indonesia · Mar 2026",
-    result: "Best Pitch Deck",
-    type: "competition",
-    resultColor: "purple"
-  },
-  {
-    id: 15,
-    title: "1st Place Winner BMC Competition",
-    event: "Nusantara PGRI University Kediri · Jan 2026",
-    result: "1st Place Winner",
-    type: "competition",
-    resultColor: "brand"
-  },
-  {
-    id: 16,
-    title: "3rd Place Winner Business Plan Competition",
-    event: "Muhammadiyah University of Sidoarjo · Jan 2026",
-    result: "3rd Place Winner",
-    type: "competition",
-    resultColor: "blue"
-  },
-  // Organizational Honors (2)
-  {
-    id: 17,
-    title: "Best Function Analyst Strategy and Growth (2nd Quarter)",
-    event: "180 Degrees Consulting - Universitas Brawijaya · Jul 2026",
-    result: "Best Function Analyst Strategy and Growth (2nd Quarter)",
-    type: "organization",
-    resultColor: "purple"
-  },
-  {
-    id: 18,
-    title: "Best Talent Growth Ministry Staff (3rd Period)",
-    event: "BEM Fakultas Ilmu Komputer Universitas Brawijaya · Nov 2025",
-    result: "Best Talent Growth Ministry Staff (3rd Period)",
-    type: "organization",
-    resultColor: "purple"
-  }
 ];
 
-export const statsBar = {
-  totalCompetitions: 17,
-  podiumFinishes: 8,
-  specialAwards: 2,
-};
+export const organizationalAwards: OrganizationalAward[] = [
+  {
+    id: "org-180dc",
+    title: "Best Function Analyst Strategy and Growth (2nd Quarter)",
+    organization: "180 Degrees Consulting Universitas Brawijaya",
+    date: "Jul 2026",
+    imageUrl: "https://i.imgur.com/CSw4ya0.jpg",
+    fallbackImage: "/images/award-180dc.jpg",
+    alt: "Best Function Analyst Strategy and Growth Certificate, 180DC UB",
+  },
+  {
+    id: "org-bem",
+    title: "Best Talent Growth Ministry Staff (3rd Period)",
+    organization: "BEM Fakultas Ilmu Komputer Universitas Brawijaya",
+    date: "Nov 2025",
+    imageUrl: "https://i.imgur.com/kNDajKm.jpg",
+    fallbackImage: "/images/award-bem.jpg",
+    alt: "Best Talent Growth Ministry Staff Certificate, BEM FILKOM UB",
+  },
+];
