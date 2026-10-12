@@ -1,52 +1,89 @@
 export interface ExperienceItem {
-  id: number;
-  title: string;
+  id: string;
+  role: string;
   organization: string;
   period: string;
+  category: "organizational" | "volunteer";
   description: string;
+  badge?: string;
 }
 
-export const experiences: ExperienceItem[] = [
+export const organizationalExperience: ExperienceItem[] = [
   {
-    id: 1,
-    title: "Strategic & Growth Function Analyst",
+    id: "180dc-analyst",
+    role: "Strategy & Growth Function Analyst",
     organization: "180 Degrees Consulting UB",
     period: "Feb 2026 – Present",
-    description: "As a Product Function Analyst in the Strategy & Growth Department, which focuses on scaling products and programs to strengthen 180DC's visibility and impact, I translate user needs and market insights into structured product initiatives. I support product documentation and performance tracking to ensure continuous improvement and sustainable growth.",
+    category: "organizational",
+    description:
+      "Translates user insights into structured initiatives to scale 180DC's visibility and impact. Product Lead for Mentoring Services; co-authored 26 of 79 pages of the 180DC Playbook / Casebook 1.0 (analytical frameworks, deck storylines, winner deck analysis, judges' POV, mentor sourcing, winning competition strategies).",
+    badge: "Best Function Analyst",
   },
   {
-    id: 2,
-    title: "Product Manager",
+    id: "raion-pm",
+    role: "Product Manager",
     organization: "Raion Community FILKOM",
-    period: "March 2026 – Present",
-    description: "After advancing from Product Manager Intern to a full-time role, I led the product strategy and execution of mobile applications, from prioritizing features and optimizing user journeys to aligning design and engineering teams. This experience strengthened my strategic thinking, product judgment, and cross-functional collaboration skills.",
+    period: "Mar 2026 – Present",
+    category: "organizational",
+    description:
+      "After advancing from intern to full-time, led product strategy and execution of mobile applications: feature prioritization, user journey optimization, aligning design and engineering teams.",
   },
   {
-    id: 3,
-    title: "Director of Growth and Innovation",
+    id: "devgirls-director",
+    role: "Director of Growth and Innovation",
     organization: "DevGirls FILKOM",
-    period: "March 2026 – Present",
-    description: "I led strategic growth and innovation initiatives by overseeing cross-functional teams across UI/UX, Product & Business, and Software Development. This experience strengthened my leadership, strategic thinking, and ability to drive product development and talent growth across diverse functional teams.",
+    period: "Mar 2026 – Present",
+    category: "organizational",
+    description:
+      "Led growth and innovation initiatives overseeing cross-functional teams across UI/UX, Product & Business, and Software Development.",
   },
   {
-    id: 4,
-    title: "Product Manager Intern",
+    id: "raion-pm-intern",
+    role: "Product Manager Intern",
     organization: "Raion Community FILKOM",
-    period: "Feb 2026 – March 2026",
-    description: "During my internship, I supported the product development process of a mobile application, from understanding user problems to assisting in feature development. This experience helped me sharpen my product mindset, analytical thinking, and collaboration skills in a real-world product environment.",
+    period: "Feb 2026 – Mar 2026",
+    category: "organizational",
+    description:
+      "Supported product development of a mobile app, from understanding user problems to assisting feature development.",
   },
   {
-    id: 5,
-    title: "Expert Staff of Talent Growth Ministry",
+    id: "sge-staff",
+    role: "Expert Staff of Talent Growth Ministry",
     organization: "SGE FILKOM",
     period: "2025 – 2026",
-    description: "Served as an Expert Staff in the Talent Growth Ministry, creating 8 content pieces across IT, arts, and sports with 85,000+ reach, managing student talent data and achievements, and distributing 120+ competition opportunities across multiple platforms. Recognized as Best Ministry Staff (3rd Period) for strong performance and contribution.",
+    category: "organizational",
+    description:
+      "Created 8 content pieces across IT, arts, and sports with 85,000+ reach; managed student talent data and achievements; distributed 120+ competition opportunities. Recognized as Best Ministry Staff (3rd Period).",
+    badge: "Best Ministry Staff",
   },
   {
-    id: 6,
-    title: "Vice Lead of Product & Business",
+    id: "devgirls-vice-lead",
+    role: "Vice Lead of Product & Business",
     organization: "DevGirls FILKOM",
     period: "2025 – 2026",
-    description: "I was entrusted with the role of Vice Lead of Product & Business within the Growth & Innovation Division at DevGirls, where I focus on driving innovation and product development initiatives. In this role, I also conduct monthly mentorship sessions and manage achievement data collection across organizational members.",
+    category: "organizational",
+    description:
+      "Growth & Innovation Division; drives innovation and product development, runs monthly mentorship sessions, manages achievement data collection.",
+  },
+];
+
+export const volunteerExperience: ExperienceItem[] = [
+  {
+    id: "lab-assistant",
+    role: "Learning Technology Laboratory Assistant",
+    organization: "Faculty of Computer Science UB",
+    period: "Aug 2026 – Present",
+    category: "volunteer",
+    description:
+      "Supports faculty-led research in learning technology: research activities, data collection, analysis, project development.",
+  },
+  {
+    id: "db-assistant",
+    role: "Database Practicum Assistant",
+    organization: "Faculty of Computer Science UB",
+    period: "Aug 2026 – Present",
+    category: "volunteer",
+    description:
+      "Guides weekly lab sessions on ERD, EERD, SQL, relational modeling, normalization.",
   },
 ];

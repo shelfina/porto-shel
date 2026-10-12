@@ -1,0 +1,152 @@
+.aboutSection {
+  padding: 6rem 0;
+  position: relative;
+  z-index: 10;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+@media (min-width: 992px) {
+  .container {
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 4.5rem;
+  }
+}
+
+/* Image Wrapper */
+.imageWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.imageFrame {
+  position: relative;
+  width: 100%;
+  max-width: 360px;
+  aspect-ratio: 4 / 5;
+  border-radius: var(--radius-xl);
+  padding: 8px;
+  background: var(--gradient-glow);
+  box-shadow: var(--shadow-glow-purple);
+  transition: transform var(--transition-smooth);
+}
+
+.imageFrame:hover {
+  transform: scale(1.02);
+}
+
+.imageInner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: calc(var(--radius-xl) - 8px);
+  overflow: hidden;
+  background: var(--bg-surface);
+}
+
+.photo {
+  object-fit: cover;
+  transition: transform var(--transition-smooth);
+}
+
+.imageFrame:hover .photo {
+  transform: scale(1.04);
+}
+
+/* Content */
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+.bioText {
+  font-size: 1.0625rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
+
+/* Highlight Chips */
+.chipRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 2.25rem;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  background: var(--bg-card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-glass);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-fast), border-color var(--transition-fast);
+}
+
+.chip:hover {
+  transform: translateY(-2px);
+  border-color: var(--border-glass-hover);
+  color: var(--blue-400);
+}
+
+.chipDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--blue-500);
+}
+
+/* GPA Highlight Card */
+.gpaCard {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.25rem;
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-glass);
+  padding: 1.25rem 1.75rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  width: fit-content;
+}
+
+.gpaNumber {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 800;
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+}
+
+.gpaInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.gpaTitle {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.gpaSubtitle {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+}

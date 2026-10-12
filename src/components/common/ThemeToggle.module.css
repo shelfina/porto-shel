@@ -1,0 +1,33 @@
+.toggleButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: var(--radius-full);
+  background: var(--bg-card);
+  border: 1px solid var(--border-glass);
+  color: var(--text-primary);
+  transition: transform var(--transition-fast), border-color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.toggleButton:hover {
+  transform: scale(1.05);
+  border-color: var(--border-glass-hover);
+  background: var(--bg-card-hover);
+}
+
+.toggleButton:active {
+  transform: scale(0.95);
+}
+
+.icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: var(--blue-400);
+  transition: transform var(--transition-normal);
+}
+
+[data-theme="light"] .icon {
+  color: var(--purple-600);
+}
