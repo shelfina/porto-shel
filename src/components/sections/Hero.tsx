@@ -33,13 +33,12 @@ export default function Hero() {
             <span>Available for Opportunities</span>
           </div>
 
-          <p className={styles.nameIntro}>
-            Hello, I&apos;m <strong>{profileData.name}</strong>
-          </p>
-
           <h1 className={styles.nameHeading}>
-            <span className="gradient-text">Product Enthusiast</span>
+            <span className={styles.helloPrefix}>Hello, I&apos;m</span>
+            <span className="gradient-text">{profileData.name}</span>
           </h1>
+
+          <p className={styles.subTitle}>Product Enthusiast</p>
 
           <p className={styles.descriptor}>
             Information Technology Education<br />

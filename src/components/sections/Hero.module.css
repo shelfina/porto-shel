@@ -124,39 +124,49 @@
   box-shadow: 0 0 8px #10B981;
 }
 
-/* Name greeting line */
-.nameIntro {
-  font-size: 1.125rem;
-  font-weight: 500;
-  color: var(--text-secondary);
-  margin-bottom: 0.5rem;
-  letter-spacing: -0.01em;
-}
-
-.nameIntro strong {
-  font-weight: 700;
-  color: var(--text-primary);
-}
-
 .nameHeading {
-  font-size: 2.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
   font-weight: 800;
   line-height: 1.05;
-  color: var(--text-primary);
-  margin-bottom: 0.9rem;
+  margin-bottom: 0.75rem;
   letter-spacing: -0.04em;
 }
 
+.helloPrefix {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  letter-spacing: -0.01em;
+  line-height: 1.4;
+}
+
+/* The gradient name span — :global needed because gradient-text is a global utility */
+.nameHeading :global(.gradient-text) {
+  font-size: 2.75rem;
+  line-height: 1.05;
+}
+
 @media (min-width: 640px) {
-  .nameHeading {
+  .nameHeading :global(.gradient-text) {
     font-size: 3.75rem;
   }
 }
 
 @media (min-width: 1200px) {
-  .nameHeading {
+  .nameHeading :global(.gradient-text) {
     font-size: 4.75rem;
   }
+}
+
+/* Sub-title: Product Enthusiast */
+.subTitle {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  letter-spacing: -0.01em;
 }
 
 .descriptor {
